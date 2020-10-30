@@ -15,5 +15,4 @@ void defaultValues() async{
 
   // Defining other data
   storage.setBool('canBeNegative', false);
-  storage.setBool('firstTime', true);
 }

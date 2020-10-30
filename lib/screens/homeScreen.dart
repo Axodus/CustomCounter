@@ -25,7 +25,6 @@ class _HomeScreenState extends State<HomeScreen> {
   void initState(){
     super.initState();
 
-    getCounterDataFromSP();
     checkData();
   }
 
@@ -47,10 +46,8 @@ class _HomeScreenState extends State<HomeScreen> {
   checkData() async{
     SharedPreferences storage = await SharedPreferences.getInstance();
 
-    if (storage.getBool('firstTime') == true) {
-      defaultValues();
-      storage.setBool('firstTime', false);
-    } else return;
+    if(storage.getString('counterName') == null) defaultValues();
+    else return;
   }
 
   incrementCounter1() async {
@@ -113,6 +110,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
   @override
   Widget build(BuildContext context) {
+    getCounterDataFromSP();
     return Scaffold(
       appBar: renderAppBar(counterName, "Home"),
       body: Container(
