@@ -1,4 +1,3 @@
-import 'dart:ui';
 import 'package:CustomCounter/config/colors.dart';
 import 'package:CustomCounter/screens/homeScreen.dart';
 import 'package:CustomCounter/screens/config.dart';
